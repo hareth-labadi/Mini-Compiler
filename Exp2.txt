@@ -1,0 +1,73 @@
+INTEGER ROUTINE Comp (INTEGER X,REAL Y,LOGICAL Z)
+% Declarations
+
+INTEGER A = 3, B; 
+REAL Z=10.0, T= 555.87, G = 34.15; 
+CHARACTER C*20; 
+INTEGER var4 DIMENSION (20); 
+REAL MAT DIMENSION (10, 200);
+LOGICAL D;
+
+% Instructions
+%A = Z + (T * 5);                  %decommenter pour tester les detection des erreurs
+%A = A + 13.5;
+%B = Z / 0;
+A = A+3;
+B = 50;
+C = "L3";
+%C = TRUE;
+D = TRUE;
+T = MAT(9,5);
+T = var4 (2);
+%var4(12) = 4.6;
+
+WRITE ("Donner la valeur de A :"); 
+READ (A);
+WRITE ("La Valeur de A est ", A, ".");
+
+WRITE ("Donner la valeur de T:"); 
+READ (T);
+WRITE ("La Valeur de T est ", T, ".");
+
+
+IF,(A.LT.10)  THEN A = A - B ;
+ELSE A = A + B;
+ENDIF
+
+DOWHILE (((A.GT.(B+1)).OR.(D.EQ.TRUE))) A = A + 1;  
+ENDDO;
+
+%comp = A;       %decommenter un seul cas et garder les autres commentes pour bien illustrer  
+%Comp = Z;		%les differents cas
+%Comp = A;
+Comp = 5*3 + 2;
+ENDR
+
+PROGRAM HelloAcad
+% Declarations
+INTEGER A,B,C ; 
+REAL Y ; 
+LOGICAL D;
+INTEGER TAB DIMENSION (10) ; 
+
+% Instructions
+%A = TAB(11) + (B * 7);
+A = TAB(9) + (B * 7);
+TAB(9) = 10;
+%B = B / 0;
+
+B = 30;
+C = 22+10*B;
+
+%A = CALL Comp (A,B,C);
+%A = CALL Comp (A,B);
+A = CALL Comp (A,Y,D);
+EQUIVALENCE (A, B, C), (Y, TAB(3));
+
+
+END
+
+
+
+
+

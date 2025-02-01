@@ -1,0 +1,55 @@
+%this is a comment
+
+INTEGER ROUTINE addNumbers(x, y)
+    INTEGER result;
+    result = x + y;
+    addNumbers = result;
+ENDR
+
+INTEGER ROUTINE addNumbers(INTEGER x, REAL y)
+    INTEGER result;
+    result = x + y;
+    addNumbers = result;
+ENDR
+
+
+PROGRAM complexExample
+
+INTEGER a, b, c, d;
+REAL x, y, z, e;
+LOGICAL flag;
+CHARACTER charVar;
+CHARACTER stringVar*3;
+CHARACTER TAB DIMENSION (20, 40);
+
+
+a = 5;
+b = 3;
+c = a + b - (-4);
+e = c / d;
+
+WRITE("The sum of a and b is", a+b , "\ndivided by d is e", e);
+
+IF (c .GT. 8) THEN
+    WRITE("c is greater than 8");
+
+    IF (a .GT. b) THEN
+        WRITE("a is greater than b");
+    ELSE
+        WRITE("a is not greater than b");
+    ENDIF
+
+ELSE
+    WRITE("c is not greater than 8");
+ENDIF
+
+flag = TRUE;
+
+DOWHILE (b .LT. 10)
+    WRITE("b is less than 10");
+    b = b + 1;
+ENDDO
+
+EQUIVALENCE (a, b), (x, TAB(1,5) );
+
+END

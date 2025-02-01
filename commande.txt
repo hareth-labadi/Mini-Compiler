@@ -1,0 +1,7 @@
+flex lexicale.l
+bison -d syntaxique.y 
+gcc lex.yy.c syntaxique.tab.c ts.c -o  projet.exe
+projet.exe Exp2.txt
+
+
+
